@@ -1,0 +1,51 @@
+import React from "react";
+import axios from "axios";
+import Websocket from "react-websocket";
+import { currencyFormatter } from "./helpers/formatting";
+import "./counter.css";
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 90,
+      total: 0
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get(
+        `${window.location.protocol}//${
+          window.location.hostname
+        }:4000/get-total`
+      )
+      .then(function(response) {
+        this.setState({ total: response.data });
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  handleData(data) {
+    let result = JSON.parse(data);
+    this.setState({ count: this.state.count + result.movement });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>{currencyFormatter(this.state.total)}</h1>
+        Count: <strong>{this.state.count}</strong>
+        <Websocket
+          url={`ws://${window.location.hostname}:4000`}
+          onMessage={this.handleData.bind(this)}
+        />
+      </div>
+    );
+  }
+}
+
+export default Counter;
