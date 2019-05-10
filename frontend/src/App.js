@@ -35,13 +35,17 @@ function Admin() {
       });
   }
   return (
-    <div className="App">
-      <button type='button' onClick={() => handleClick(50)}>$50</button>
-      <button type='button' onClick={() => handleClick(100)}>$100</button>
-      <button type='button' onClick={() => handleClick(250)}>$250</button>
-      <button type='button' onClick={() => handleClick(500)}>$500</button>
-      <button type='button' onClick={() => handleClick(1000)}>$1000</button>
+    <div className="admin">
+    <ul>
+      <li><button type='button' onClick={() => handleClick(50)}>$50</button></li>
+      <li><button type='button' onClick={() => handleClick(100)}>$100</button></li>
+      <li><button type='button' onClick={() => handleClick(250)}>$250</button></li>
+      <li><button type='button' onClick={() => handleClick(500)}>$500</button></li>
+      <li><button type='button' onClick={() => handleClick(1000)}>$1000</button></li>
+    </ul>
+    <div className='admin__reset-holder'>
       <button type='button' onClick={handleReset}>RESET</button>
+      </div>
     </div>
   );
 }

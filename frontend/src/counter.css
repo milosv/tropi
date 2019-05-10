@@ -1,0 +1,117 @@
+.App .counter {
+}
+.App.counter--over-thousand {
+  background-color: #000;
+}
+.App.counter--over-thousand h1 {
+    color: #999999;
+}
+.counter--over-thousand:before,
+.counter--over-thousand:after {
+  content: "●";
+  font-size: 16px;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  text-shadow: 306px -56px red, 42px -40px red, 21px 30px red, 321px 220px red,
+    -119px 151px red, 2px 6px red, 73px 300px red, -179px -10px red,
+    -2px -75px red, -25px -19px red, -33px -56px red, 157px -435px red,
+    -56px 9px red, 125px -10px red, 181px -49px red, -96px -208px red,
+    34px 149px red, -2px 2px red, -35px 23px red, 115px 15px red, -28px 36px red,
+    -297px -118px red, -68px 303px red, 149px -111px red, 68px 36px red,
+    -176px -269px red, -193px -267px red, -50px 7px red, 195px -182px red,
+    -39px 20px red, -279px 163px red, 105px -259px red, -275px 85px red,
+    213px 245px red, 14px 7px red, 65px 111px red, -32px 6px red, 49px 49px red,
+    -1px -105px red, 329px -65px red, -8px -5px red, 77px -420px red,
+    215px -56px red, 122px -192px red, -204px -244px red, 51px -36px red,
+    123px 5px red, -27px 21px red, -79px -334px red, 151px -39px red,
+    4px -145px red, -7px -8px red, 252px -15px red, -12px 12px red,
+    57px 204px red, 125px -403px red, 342px 3px red, -79px 133px red,
+    -171px -172px red, 96px -104px red, -21px 35px red, 77px -10px red,
+    -16px 292px red, 49px -6px red, -129px -24px red, 117px 18px red,
+    -334px 192px red, -8px 33px red, 5px -60px red, 109px -178px red,
+    333px 122px red, -92px -49px red, -19px 316px red, -89px -394px red,
+    -125px 239px red, 73px 402px red, 86px -22px red, -97px -83px red,
+    68px 350px red, 46px 32px red, 226px 115px red;
+  animation: 2s bang ease-out infinite backwards,
+    2s gravity ease-out infinite backwards,
+    10s position linear infinite forwards;
+}
+
+.counter--over-thousand:after {
+  animation-delay: -5s;
+  animation-duration: 2.5s, 2.5s, 12.5s;
+}
+
+@keyframes bang {
+  0%,
+  5% {
+    text-shadow: 0 0 transparent;
+  }
+  35% {
+    text-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+      0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+  }
+}
+@keyframes gravity {
+  0%,
+  5% {
+    font-size: 120%;
+    opacity: 0;
+    transform: translateY(340px);
+    animation-timing-function: ease-out;
+  }
+  35% {
+    transform: translateY(0px);
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(1000px);
+    opacity: 0;
+    font-size: 0;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes position {
+  0%,
+  20% {
+    margin-top: 50vh;
+    margin-left: 60vw;
+    filter: hue-rotate(0deg);
+  }
+  20.1%,
+  40% {
+    margin-top: 10vh;
+    margin-left: 30vw;
+    filter: hue-rotate(72deg);
+  }
+  40.1%,
+  60% {
+    margin-top: 30vh;
+    margin-left: 40vw;
+    filter: hue-rotate(144deg);
+  }
+  60.1%,
+  80% {
+    margin-top: 60vh;
+    margin-left: 70vw;
+    filter: hue-rotate(216deg);
+  }
+  80.1%,
+  100% {
+    margin-top: 30vh;
+    margin-left: 80vw;
+    filter: hue-rotate(288deg);
+  }
+}

@@ -1,18 +1,37 @@
 .App {
   text-align: center;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.6);
 }
+
 .App h1 {
-  color: purple;
+  color: #282c34;
   font-size: 60px;
-  text-shadow: #282c34 3px 3px 3px;
+  /* text-shadow: #282c34 3px 3px 3px; */
+  font-size: 16vw;
+  margin: 0;
+  position: relative;
+  padding-left: 5vw;
+  transition: color 0.3s ease-in-out;
 }
-.App h1:first-child{
-  color: blue;
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App h1 span {
+  font-size: 7vw;
+  position: absolute;
+  top: 3vw;
+  left: 0;
+  font-weight: 400;
+  color: azure;
+  transition: color 0.3s ease-in-out;
 }
 
 .App-header {
@@ -26,15 +45,24 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.admin {
+  background-color: lightblue;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.admin ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.admin li {
+  padding: 8px;
+}
+.admin li button {
+  padding: 5px;
+  font-size: 20px;
+}
+.admin__reset-holder {
+  padding-top: 80px;
+}
+.admin__reset-holder button {
+  color: red;
 }
