@@ -37,7 +37,7 @@ class Counter extends React.Component {
 
     render() {
         const classnames = cx('App', {
-            'counter--over-thousand': this.state.total > 999 && this.state.total < 1998,
+            'counter--over-thousand': this.state.total > 9999 && this.state.total < 11001,
             'counter--over-two-thousand': this.state.total > 1999 && this.state.total < 2998,
             'counter--over-three-thousand': this.state.total > 2999 && this.state.total < 3998
         });
