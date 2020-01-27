@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 //     ws.send('Hi there, I am a WebSocket server');
 // });
 
-app.get('/admin', function (request, response, next) {
+app.get('/admin', function(request, response, next) {
     response.sendfile(__dirname + '/build/index.html');
 });
 
@@ -93,7 +93,7 @@ server.listen(port, () => {
     const sse = new SSE(server);
     console.log(`Tropi Server listening on port ${port}!`);
 
-    sse.on('connection', function (stream) {
+    sse.on('connection', function(stream) {
         clients.push(stream);
         console.log('Opened connection 🎉');
 
@@ -101,7 +101,7 @@ server.listen(port, () => {
         stream.send(json);
         console.log('Sent: ' + json);
 
-        stream.on('close', function () {
+        stream.on('close', function() {
             clients.splice(clients.indexOf(stream), 1);
             console.log('Closed connection 😱');
         });
@@ -112,14 +112,14 @@ server.listen(port, () => {
 const broadcast = () => {
     var json = JSON.stringify({ total: total });
 
-    clients.forEach(function (stream) {
+    clients.forEach(function(stream) {
         stream.send(json);
         console.log('Sent: ' + json);
     });
 }
 setInterval(broadcast, 800);
 
-app.post('/api', function (req, res) {
+app.post('/api', function(req, res) {
     var message = JSON.stringify(req.body);
     //console.log('Received: ' + message);
     res.status(200).end();
