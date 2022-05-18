@@ -9,7 +9,7 @@ export const currencyFormatter = (value, useDecimals = true, separateCurrency = 
     if (separateCurrency === true) {
         currencyLabel = '<span>$</span>';
     }
-    let currency = `${currencyLabel}${typeof value === 'number' ? value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') : value}`;
+    let currency = `${typeof value === 'number' ? value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') : value}`;
 
     if (!useDecimals) {
         currency = currency.substr(0, currency.indexOf('.'));

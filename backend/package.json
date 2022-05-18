@@ -1,19 +1,19 @@
 {
-  "name": "tropi-backend",
-  "version": "1.0.0",
-  "description": "Tropi raise the paddle express server",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Milos Veljkovic",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "express-ws": "^4.0.0",
-    "sse": "0.0.8",
-    "ws": "^7.4.6"
-  }
+    "name": "tropi-backend",
+    "version": "1.0.0",
+    "description": "Tropi raise the paddle express server",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Milos Veljkovic",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "express-ws": "^5.0.2",
+        "sse": "0.0.8",
+        "ws": "^8.5.0"
+    }
 }

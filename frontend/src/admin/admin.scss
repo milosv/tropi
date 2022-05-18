@@ -1,0 +1,45 @@
+.admin {
+  background-color: lightblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+
+  &__amounts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+  }
+
+  li {
+    padding: 8px;
+    text-align: center;
+
+    button {
+      padding: 5px;
+      font-size: 20px;
+      min-width: 320px;
+      border-radius: 6px;
+      line-height: 3;
+    }
+  }
+
+  &__pages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+  }
+
+  &__reset-holder {
+    padding-top: 80px;
+    text-align: right;
+  }
+
+  &__reset-holder button {
+    color: red;
+  }
+}

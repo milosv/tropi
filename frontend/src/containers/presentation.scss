@@ -1,0 +1,43 @@
+.slide{
+  height: 100vh;
+  width: 100vw;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease-in;
+
+  &--counter {
+    background-color: #fff;
+  }
+
+  &--1 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-1.jpg);
+  }
+  &--2 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-2.jpg);
+  }
+  &--3 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-3.jpg);
+  }
+  &--4 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-5.jpg);
+  }
+  &--5 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-7.jpg);
+  }
+  &--6 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-9.jpg);
+  }
+  &--7 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-11.jpg);
+  }
+  &--8 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-13.jpg);
+  }
+  &--9 {
+    background-image: url(../images/pages/2022-Tropi-Paddle-15.jpg);
+  }
+}

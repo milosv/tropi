@@ -1,11 +1,51 @@
-.App .counter {
-}
-.App.counter--over-thousand {
-  background-color: #000;
-}
-.App.counter--over-thousand h1 {
+.counter {
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 150px;
+    position: relative;
+    span {
+      font-size: 60px;
+      margin-top: -60px;
+    }
+  }
+
+  &--small {
+    h1 {
+      color: #ffbd4c;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #1d4487;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      display: block;
+      height: auto;
+      font-size: 30px;
+      span {
+        font-size: 30px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--over-thousand {
+    background-color: #000;
+  }
+
+  &--over-thousand h1 {
     color: #999999;
+  }
+
+
 }
+
 .counter--over-thousand:before,
 .counter--over-thousand:after {
   content: "●";
@@ -44,10 +84,12 @@
 }
 
 @keyframes bang {
+
   0%,
   5% {
     text-shadow: 0 0 transparent;
   }
+
   35% {
     text-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
       0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
@@ -63,7 +105,9 @@
       0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
   }
 }
+
 @keyframes gravity {
+
   0%,
   5% {
     font-size: 120%;
@@ -71,11 +115,13 @@
     transform: translateY(340px);
     animation-timing-function: ease-out;
   }
+
   35% {
     transform: translateY(0px);
     opacity: 1;
     animation-timing-function: ease-in;
   }
+
   100% {
     transform: translateY(1000px);
     opacity: 0;
@@ -83,31 +129,37 @@
     animation-timing-function: ease-in;
   }
 }
+
 @keyframes position {
+
   0%,
   20% {
     margin-top: 50vh;
     margin-left: 60vw;
     filter: hue-rotate(0deg);
   }
+
   20.1%,
   40% {
     margin-top: 10vh;
     margin-left: 30vw;
     filter: hue-rotate(72deg);
   }
+
   40.1%,
   60% {
     margin-top: 30vh;
     margin-left: 40vw;
     filter: hue-rotate(144deg);
   }
+
   60.1%,
   80% {
     margin-top: 60vh;
     margin-left: 70vw;
     filter: hue-rotate(216deg);
   }
+
   80.1%,
   100% {
     margin-top: 30vh;

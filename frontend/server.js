@@ -6,29 +6,8 @@ const app = express();
 const cors = require('cors');
 const port = 4000;
 
-// const WebSocket = require('ws');
-// var expressWs = require('express-ws')(app);
-
-// const server = http.createServer(app);
 app.use(express.static('build'));
 const server = http.createServer(app);
-/*
-function (req, res) {
-    // Set CORS headers
-    console.log(req);
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Request-Method', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-    res.setHeader('Access-Control-Allow-Headers', '*');
-    if (req.method === 'OPTIONS') {
-        res.writeHead(200);
-        res.end();
-        return;
-    }
-}
-*/
-//initialize the WebSocket server instance
-// const wss = new WebSocket.Server({server: server, path: "/"});
 
 let total = 0;
 let page = 0;
@@ -36,26 +15,6 @@ const clients = [];
 
 app.use(cors());
 app.use(bodyParser.json());
-
-
-// app.use(function (req, res, next) {
-//     req.testing = 'testing';
-//     return next();
-//   });
-
-// wss.on('connection', (ws) => {
-
-//     //connection is up, let's add a simple simple event
-//     ws.on('message', (message) => {
-
-//         //log the received message and send it back to the client
-//         console.log('received: %s', message);
-//         ws.send(`Hello, you sent -> ${message}`);
-//     });
-
-//     //send immediatly a feedback to the incoming connection
-//     ws.send('Hi there, I am a WebSocket server');
-// });
 
 app.get('/admin', function(request, response, next) {
     response.sendFile(__dirname + '/build/index.html');
@@ -73,7 +32,7 @@ app.post('/add', (req, res) => {
 });
 
 app.post('/page', (req,res) => {
-  page = page+ req.body.page;
+  page = req.body.page;
   res.status(200);
   res.end();
 });
@@ -84,18 +43,6 @@ app.delete('/reset', (req, res) => {
     res.end();
 });
 
-// app.ws('/', function (ws, req) {
-//     ws.on('message', function (msg) {
-//         //   console.log('*******************');
-//         //   console.log(msg);
-//         //   ws.send(total);
-//         ws.res(total);
-//     });
-//     console.log('socket', req.testing);
-// });
-
-// app.listen(port, () => console.log(`Tropi Server listening on port ${port}!`));
-
 server.listen(port, () => {
     const sse = new SSE(server);
     console.log(`Tropi Server listening on port ${port}!`);
@@ -104,7 +51,7 @@ server.listen(port, () => {
         clients.push(stream);
         console.log('Opened connection 🎉');
 
-        var json = JSON.stringify({ total: total });
+        var json = JSON.stringify({ total: total, page: page });
         stream.send(json);
         console.log('Sent: ' + json);
 
@@ -117,7 +64,7 @@ server.listen(port, () => {
 
 // brodcast
 const broadcast = () => {
-    var json = JSON.stringify({ total: total });
+    var json = JSON.stringify({ total: total, page: page });
 
     clients.forEach(function(stream) {
         stream.send(json);
