@@ -5,7 +5,7 @@ import './counter.scss';
 
 export const Counter = ({ total, main }) => {
 
-  const [ showFIreworks, setShowFireworks] = useState(false);
+  const [ showFireworks, setShowFireworks] = useState(false);
 
   useEffect(() => {
     setShowFireworks(total % 2000 < 400 && total > 0 && main);
@@ -13,7 +13,7 @@ export const Counter = ({ total, main }) => {
 
 
   const classnames = cx('counter', {
-    'counter--over-thousand': showFIreworks,
+    'counter--over-thousand': showFireworks,
     'counter--small': !main
   });
 
