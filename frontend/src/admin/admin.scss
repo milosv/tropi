@@ -7,13 +7,6 @@
   bottom: 0;
   overflow-y: scroll;
 
-  &__amounts {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 20px;
-  }
-
   li {
     padding: 8px;
     text-align: center;
@@ -27,11 +20,28 @@
     }
   }
 
+  &__amounts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    li {
+      button {
+        background-color: #186a28;
+      }
+    }
+  }
+
   &__pages {
     list-style: none;
     margin: 0;
     padding: 0;
     padding-top: 20px;
+    li {
+      button {
+        background-color: #f9b142;
+      }
+    }
   }
 
   &__reset-holder {

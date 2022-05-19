@@ -10,7 +10,7 @@ app.use(express.static('build'));
 const server = http.createServer(app);
 
 let total = 0;
-let page = 0;
+let page = 1;
 const clients = [];
 
 app.use(cors());

@@ -1,49 +1,54 @@
 .counter {
+  background-image: url('../../images/logo-only.png');
+  background-repeat: no-repeat;
+  background-size: 124vh auto;
+  background-position: 50% 0;
 
   h1 {
     margin: 0;
     padding: 0;
+    padding-top: 20vh;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 150px;
+    font-size: 250px;
     position: relative;
+    background: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     span {
-      font-size: 60px;
-      margin-top: -60px;
+      font-size: 90px;
+      margin-top: -110px;
     }
   }
 
   &--small {
+    background-image: none;
+
     h1 {
       color: #ffbd4c;
+      -webkit-text-fill-color: #ffbd4c;
       padding: 5px;
       border-radius: 5px;
-      background-color: #1d4487;
+      background: #1d4487;
+      background-clip: border-box;
       position: fixed;
       bottom: 10px;
       right: 10px;
       display: block;
       height: auto;
       font-size: 30px;
+
       span {
         font-size: 30px;
         margin-top: 0;
       }
     }
   }
-
-  &--over-thousand {
-    background-color: #000;
-  }
-
-  &--over-thousand h1 {
-    color: #999999;
-  }
-
-
 }
 
 .counter--over-thousand:before,
